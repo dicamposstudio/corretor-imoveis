@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>João Silva | Corretor de Imóveis em Recife - Comprar e Alugar</title>
+  <meta name="description" content="João Silva, corretor de imóveis em Recife. Encontre apartamentos, casas e salas comerciais para comprar ou alugar com atendimento direto pelo WhatsApp." />
+  <meta property="og:title" content="João Silva | Corretor de Imóveis em Recife" />
+  <meta property="og:description" content="Imóveis selecionados para comprar ou alugar em Recife e Região Metropolitana." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <span class="brand-mark">JS</span>
+        <div>
+          <strong>João Silva Imóveis</strong>
+          <small>CRECI 00000-F</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#comprar">Comprar</a>
+        <a href="#alugar">Alugar</a>
+        <a href="#bairros">Bairros</a>
+        <a href="#blog">Blog</a>
+      </nav>
+      <a id="btn-wa-header" class="btn btn-outline track-whatsapp" href="https://wa.me/5581999999999" target="_blank" rel="noopener noreferrer" data-origem="header" data-acao="whatsapp">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="tag">Catálogo digital de imóveis</span>
+          <h1>Encontre imóveis para comprar ou alugar em Recife sem perder tempo no Instagram.</h1>
+          <p>Uma vitrine organizada com imóveis atualizados, filtros por bairro, páginas individuais e atendimento direto pelo WhatsApp.</p>
+          <div class="hero-actions">
+            <a id="btn-hero-ver-imoveis" class="btn" href="#imoveis">Ver imóveis disponíveis</a>
+            <a id="btn-hero-anunciar-imovel" class="btn btn-light" href="#anunciar-imovel">Quero vender/alugar meu imóvel</a>
+          </div>
+          <div class="trust">
+            <span>+80 imóveis cadastrados</span>
+            <span>Compra, aluguel e investimento</span>
+            <span>Atendimento em Recife e RMR</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Apartamento moderno em Recife" width="900" height="560" />
+          <div class="floating-card">
+            <strong>Apartamento em Boa Viagem</strong>
+            <span>3 quartos • 2 vagas • R$ 750 mil</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-box container" id="imoveis">
+      <div class="search-head">
+        <h2>Busque por imóveis disponíveis</h2>
+        <p>Exemplo de filtros que o corretor pode usar para organizar a carteira.</p>
+      </div>
+      <div class="filters">
+        <select><option>Comprar</option><option>Alugar</option></select>
+        <select><option>Todos os bairros</option><option>Boa Viagem</option><option>Casa Forte</option><option>Graças</option><option>Boa Vista</option></select>
+        <select><option>Tipo de imóvel</option><option>Apartamento</option><option>Casa</option><option>Sala comercial</option></select>
+        <select><option>Faixa de valor</option><option>Até R$ 300 mil</option><option>R$ 300 mil a R$ 700 mil</option><option>Acima de R$ 700 mil</option></select>
+        <button class="btn">Filtrar</button>
+      </div>
+    </section>
+
+    <section class="container section" id="comprar">
+      <div class="section-title">
+        <span class="tag">Compra</span>
+        <h2>Imóveis à venda em destaque</h2>
+      </div>
+      <div class="cards">
+        <article class="property-card">
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80" alt="Apartamento 3 quartos à venda em Boa Viagem, Recife" width="900" height="600" />
+          <div class="property-body">
+            <span class="status">Venda</span>
+            <h3>Apartamento 3 quartos em Boa Viagem</h3>
+            <p>Próximo ao Shopping Recife, com varanda, 2 vagas e área de lazer completa.</p>
+            <div class="specs"><span>92 m²</span><span>3 quartos</span><span>2 vagas</span></div>
+            <strong class="price">R$ 750.000</strong>
+            <a id="btn-wa-venda-boaviagem" class="btn full track-whatsapp" href="https://wa.me/5581999999999?text=Tenho%20interesse%20no%20apartamento%20em%20Boa%20Viagem" target="_blank" rel="noopener noreferrer" data-origem="card-imovel" data-acao="whatsapp" data-imovel="Apartamento 3 quartos em Boa Viagem" data-bairro="Boa Viagem" data-tipo="Venda" data-valor="750000">Chamar no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="property-card">
+          <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Casa ampla à venda em Casa Forte, Recife" width="900" height="600" />
+          <div class="property-body">
+            <span class="status">Venda</span>
+            <h3>Casa ampla em Casa Forte</h3>
+            <p>Excelente localização, perto de escolas, restaurantes e principais vias da zona norte.</p>
+            <div class="specs"><span>180 m²</span><span>4 quartos</span><span>3 vagas</span></div>
+            <strong class="price">R$ 1.250.000</strong>
+            <a id="btn-wa-venda-casaforte" class="btn full track-whatsapp" href="https://wa.me/5581999999999?text=Tenho%20interesse%20na%20casa%20em%20Casa%20Forte" target="_blank" rel="noopener noreferrer" data-origem="card-imovel" data-acao="whatsapp" data-imovel="Casa ampla em Casa Forte" data-bairro="Casa Forte" data-tipo="Venda" data-valor="1250000">Chamar no WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="property-card">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" alt="Apartamento à venda nas Graças, Recife" width="900" height="600" />
+          <div class="property-body">
+            <span class="status">Venda</span>
+            <h3>Apartamento nas Graças</h3>
+            <p>Imóvel ideal para quem busca mobilidade, conforto e valorização em Recife.</p>
+            <div class="specs"><span>74 m²</span><span>2 quartos</span><span>1 vaga</span></div>
+            <strong class="price">R$ 520.000</strong>
+            <a id="btn-wa-venda-gracas" class="btn full track-whatsapp" href="https://wa.me/5581999999999?text=Tenho%20interesse%20no%20apartamento%20nas%20Graças" target="_blank" rel="noopener noreferrer" data-origem="card-imovel" data-acao="whatsapp" data-imovel="Apartamento nas Graças" data-bairro="Graças" data-tipo="Venda" data-valor="520000">Chamar no WhatsApp</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="alugar">
+      <div class="section-title">
+        <span class="tag">Aluguel</span>
+        <h2>Imóveis para alugar</h2>
+      </div>
+      <div class="cards small-cards">
+        <article class="mini-card"><h3>Flat mobiliado em Boa Viagem</h3><p>1 quarto • próximo à praia</p><strong>R$ 2.800/mês</strong></article>
+        <article class="mini-card"><h3>Sala comercial na Ilha do Leite</h3><p>36 m² • empresarial completo</p><strong>R$ 1.900/mês</strong></article>
+        <article class="mini-card"><h3>Apartamento na Boa Vista</h3><p>2 quartos • perto da Unicap</p><strong>R$ 2.200/mês</strong></article>
+      </div>
+    </section>
+
+    <section class="neighborhoods" id="bairros">
+      <div class="container section">
+        <div class="section-title">
+          <span class="tag">SEO local</span>
+          <h2>Páginas por bairro para aparecer no Google</h2>
+          <p>Cada bairro vira uma página estratégica para buscas como “apartamento à venda em Boa Viagem”.</p>
+        </div>
+        <div class="bairro-grid">
+          <a href="imoveis-em-boa-viagem.html">Imóveis em Boa Viagem</a>
+          <a href="imoveis-em-casa-forte.html">Imóveis em Casa Forte</a>
+          <a href="imoveis-nas-gracas.html">Imóveis nas Graças</a>
+          <a href="imoveis-na-boa-vista.html">Imóveis na Boa Vista</a>
+          <a href="imoveis-em-piedade.html">Imóveis em Piedade</a>
+          <a href="imoveis-em-candeias.html">Imóveis em Candeias</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="blog">
+      <div class="section-title">
+        <span class="tag">Blog imobiliário</span>
+        <h2>Conteúdos que atraem compradores pelo Google</h2>
+      </div>
+      <div class="blog-grid">
+        <article>
+          <span>Guia de bairro</span>
+          <h3>Vale a pena morar em Boa Viagem?</h3>
+          <p>Artigo para atrair quem pesquisa sobre qualidade de vida, praia, comércio e valorização.</p>
+        </article>
+        <article>
+          <span>Financiamento</span>
+          <h3>Como financiar um imóvel em Recife</h3>
+          <p>Conteúdo para captar leads que ainda estão no início da jornada de compra.</p>
+        </article>
+        <article>
+          <span>Investimento</span>
+          <h3>Melhores bairros para investir em aluguel</h3>
+          <p>Conteúdo pensado para investidores que buscam renda e valorização.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container owner-cta" id="anunciar-imovel">
+      <div>
+        <span class="tag">Para proprietários</span>
+        <h2>Quer vender ou alugar seu imóvel?</h2>
+        <p>Cadastre seu imóvel para receber uma avaliação inicial e entender a melhor estratégia de divulgação para venda ou locação em Recife.</p>
+      </div>
+      <div class="owner-card">
+        <h3>Anuncie seu imóvel conosco</h3>
+        <p>Envie as informações pelo WhatsApp e receba orientação sobre preço, fotos, divulgação e visitas.</p>
+        <a id="btn-wa-anunciar-imovel" class="btn full track-whatsapp" href="https://wa.me/5581999999999?text=Quero%20anunciar%20meu%20imóvel%20para%20venda%20ou%20aluguel" target="_blank" rel="noopener noreferrer" data-origem="secao-anunciar-imovel" data-acao="whatsapp" data-tipo="Captacao proprietario">Quero anunciar meu imóvel</a>
+      </div>
+    </section>
+
+    <section class="container pitch-demo" id="pitch-corretor">
+      <div>
+        <span class="tag">Área de demonstração</span>
+        <h2>Como este catálogo ajuda o corretor a vender mais?</h2>
+        <p>Esta seção pode ficar oculta no site final. Ela serve apenas para apresentar o produto ao corretor durante a negociação.</p>
+      </div>
+      <ul>
+        <li>Organiza os imóveis fora do feed do Instagram.</li>
+        <li>Cria páginas rastreáveis para Google Ads e Meta Ads.</li>
+        <li>Gera tráfego orgânico com páginas por bairro e artigos.</li>
+        <li>Facilita a captação de proprietários que querem vender ou alugar.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>João Silva Imóveis</strong>
+        <p>Catálogo digital demonstrativo criado pela DiCampos Studio.</p>
+      </div>
+      <div>
+        <p>Compra • Aluguel • Avaliação • Investimento</p>
+        <p>Recife e Região Metropolitana</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
