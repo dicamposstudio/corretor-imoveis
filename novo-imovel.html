@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novo imóvel | Painel do corretor</title><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <a class="brand admin-brand" href="painel.html"><span class="brand-mark">JS</span><span class="brand-copy"><strong>João Silva Imóveis</strong><small>Painel administrativo</small></span></a>
+    <nav class="admin-menu"><a href="painel.html">▦ <span>Visão geral</span></a><a href="painel.html#imoveis">⌂ <span>Imóveis</span></a><a class="active" href="novo-imovel.html">＋ <span>Novo imóvel</span></a><a href="painel.html#leads">◎ <span>Leads</span></a><a href="configuracoes.html">⚙ <span>Configurações</span></a></nav>
+    <div class="admin-sidebar-foot"><a href="index.html" target="_blank" rel="noopener">↗ Ver portal</a><button id="logout-button" type="button">Sair</button></div>
+  </aside>
+  <div class="admin-content">
+    <header class="admin-topbar"><button class="admin-menu-toggle" id="admin-menu-toggle">☰</button><div><span class="micro-label">Estoque</span><strong id="form-mode-title">Cadastrar imóvel</strong></div><a class="btn btn-outline" href="painel.html">← Voltar</a></header>
+    <main class="admin-main narrow-admin">
+      <section class="dashboard-head"><div><span class="eyebrow">Cadastro</span><h1 id="property-page-title">Novo imóvel</h1><p>Preencha as informações uma vez. O portal usa esses dados no catálogo, página individual, filtros e painel.</p></div></section>
+      <form class="form-card admin-form-card" id="property-form">
+        <div class="form-section-title"><span>1</span><div><strong>Informações básicas</strong><small>Identificação, finalidade e localização.</small></div></div>
+        <div class="form-grid">
+          <label>Código do imóvel<input class="form-control" id="p-id" required placeholder="JS-450" maxlength="30"></label>
+          <label>Status<select class="form-control" id="p-status"><option>Disponível</option><option>Reservado</option><option>Vendido</option><option>Alugado</option></select></label>
+          <label class="wide">Título<input class="form-control" id="p-title" required placeholder="Apartamento 3 quartos em Boa Viagem"></label>
+          <label>Finalidade<select class="form-control" id="p-purpose"><option>Venda</option><option>Aluguel</option></select></label>
+          <label>Tipo<select class="form-control" id="p-type"><option>Apartamento</option><option>Casa</option><option>Flat</option><option>Sala comercial</option><option>Terreno</option><option>Cobertura</option><option>Loja</option><option>Galpão</option></select></label>
+          <label>Bairro<input class="form-control" id="p-neighborhood" required></label>
+          <label>Cidade<input class="form-control" id="p-city" value="Recife" required></label>
+        </div>
+
+        <div class="form-section-title"><span>2</span><div><strong>Características e valores</strong><small>Dados usados na busca e na página do imóvel.</small></div></div>
+        <div class="form-grid">
+          <label>Valor (R$)<input class="form-control" id="p-value" type="number" min="0" step="100" required></label>
+          <label>Área (m²)<input class="form-control" id="p-area" type="number" min="1" step="0.01" required></label>
+          <label>Quartos<input class="form-control" id="p-bedrooms" type="number" min="0" value="2"></label>
+          <label>Suítes<input class="form-control" id="p-suites" type="number" min="0" value="1"></label>
+          <label>Vagas<input class="form-control" id="p-parking" type="number" min="0" value="1"></label>
+          <label>Condomínio (R$)<input class="form-control" id="p-condo" type="number" min="0" step="1"></label>
+          <label>IPTU anual (R$)<input class="form-control" id="p-iptu" type="number" min="0" step="1"></label>
+          <label class="wide">Diferenciais, separados por vírgula<input class="form-control" id="p-tags" placeholder="Varanda, lazer, vista livre, portaria 24h"></label>
+          <label class="wide">Descrição<textarea class="form-control" id="p-description" required placeholder="Descreva localização, diferenciais e perfil do imóvel."></textarea></label>
+        </div>
+
+        <div class="form-section-title"><span>3</span><div><strong>Fotos</strong><small>Envie várias imagens e escolha a principal pela ordem.</small></div></div>
+        <div class="upload-zone" id="upload-zone">
+          <input id="p-files" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+          <strong>Arraste fotos aqui ou clique para selecionar</strong><span>JPG, PNG ou WebP. No Supabase elas são enviadas ao armazenamento do portal.</span>
+        </div>
+        <div class="photo-preview-grid" id="photo-preview"></div>
+        <label class="wide fallback-url-label">Ou use uma URL de imagem principal<input class="form-control" id="p-image" type="url" placeholder="https://..."></label>
+
+        <div class="form-section-title"><span>4</span><div><strong>Publicação</strong><small>Defina como o imóvel aparece no portal.</small></div></div>
+        <div class="toggle-grid">
+          <label class="toggle-row"><input type="checkbox" id="p-published" checked><span><strong>Publicado</strong><small>Visível no catálogo público.</small></span></label>
+          <label class="toggle-row"><input type="checkbox" id="p-featured"><span><strong>Imóvel em destaque</strong><small>Pode receber prioridade em áreas especiais.</small></span></label>
+        </div>
+        <div class="form-actions"><a class="btn btn-outline" href="painel.html">Cancelar</a><button class="btn" id="save-property" type="submit">Salvar imóvel</button></div>
+        <div id="property-message" class="form-message" hidden></div>
+      </form>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="data.js"></script><script src="backend.js"></script><script src="novo-imovel.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do corretor | João Silva Imóveis</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <a class="brand admin-brand" href="painel.html"><span class="brand-mark">JS</span><span class="brand-copy"><strong>João Silva Imóveis</strong><small>Painel administrativo</small></span></a>
+    <nav class="admin-menu">
+      <a class="active" href="painel.html">▦ <span>Visão geral</span></a>
+      <a href="#imoveis">⌂ <span>Imóveis</span></a>
+      <a href="novo-imovel.html">＋ <span>Novo imóvel</span></a>
+      <a href="#leads">◎ <span>Leads</span></a>
+      <a href="#selecoes">◇ <span>Seleções</span></a>
+      <a href="configuracoes.html">⚙ <span>Configurações</span></a>
+    </nav>
+    <div class="admin-sidebar-foot">
+      <a href="index.html" target="_blank" rel="noopener">↗ Ver portal</a>
+      <button id="logout-button" type="button">Sair</button>
+    </div>
+  </aside>
+
+  <div class="admin-content">
+    <header class="admin-topbar">
+      <button class="admin-menu-toggle" id="admin-menu-toggle" aria-label="Abrir menu">☰</button>
+      <div><span class="micro-label">Painel do corretor</span><strong id="admin-mode"></strong></div>
+      <a class="btn" href="novo-imovel.html">+ Novo imóvel</a>
+    </header>
+
+    <main class="admin-main">
+      <section class="dashboard-head admin-welcome">
+        <div><span class="eyebrow">Visão geral</span><h1>Olá, <span id="broker-first-name">corretor</span>.</h1><p>Acompanhe estoque, contatos e os imóveis que estão despertando mais interesse.</p></div>
+        <div class="dashboard-head-actions"><button class="text-button" id="refresh-dashboard" type="button">Atualizar dados</button><button class="text-button" id="seed-demo" type="button" hidden>Gerar atividade demo</button></div>
+      </section>
+
+      <section class="metric-grid" id="metrics" aria-live="polite"></section>
+
+      <section class="panel" id="imoveis">
+        <div class="panel-head panel-head-responsive">
+          <div><span class="micro-label">Estoque</span><h2>Meus imóveis</h2></div>
+          <div class="panel-tools"><input class="compact-input" id="property-search" type="search" placeholder="Buscar código, bairro ou título"><a class="btn btn-small" href="novo-imovel.html">+ Cadastrar</a></div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table admin-property-table">
+            <thead><tr><th>Imóvel</th><th>Status</th><th>Valor</th><th>Visualizações</th><th>WhatsApp</th><th>Ações</th></tr></thead>
+            <tbody id="property-table"></tbody>
+          </table>
+        </div>
+        <div id="property-empty" class="empty-state compact-empty" hidden>Nenhum imóvel cadastrado.</div>
+      </section>
+
+      <div class="dashboard-grid admin-grid">
+        <div>
+          <section class="panel" id="leads">
+            <div class="panel-head"><div><span class="micro-label">Captação</span><h2>Leads recebidos</h2></div><span class="result-count" id="lead-count"></span></div>
+            <div id="lead-list" class="lead-list"></div>
+          </section>
+        </div>
+        <aside>
+          <section class="panel"><div class="panel-head"><h2>Bairros mais vistos</h2></div><div class="bar-list" id="neighborhood-bars"></div></section>
+          <section class="panel"><div class="panel-head"><h2>Origem dos contatos</h2></div><div class="bar-list" id="source-bars"></div></section>
+          <section class="panel" id="selecoes">
+            <div class="panel-head"><div><span class="micro-label">Atendimento</span><h2>Seleção para cliente</h2></div></div>
+            <p class="muted-copy">Escolha imóveis e gere um link com uma curadoria personalizada.</p>
+            <label>Nome do cliente<input class="form-control" id="selection-client" placeholder="Ex.: Marina"></label>
+            <div id="selection-options" class="selection-checklist"></div>
+            <button id="generate-selection" class="btn full" type="button">Gerar link</button>
+            <div id="selection-result" class="success-box" hidden></div>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="admin-toast" hidden></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script><script src="data.js"></script><script src="backend.js"></script><script src="painel.js"></script>
+</body>
+</html>

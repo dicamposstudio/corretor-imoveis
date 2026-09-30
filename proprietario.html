@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anuncie seu imóvel | João Silva Imóveis</title>
+  <meta name="description" content="Envie os dados do seu imóvel para avaliação inicial de venda ou locação em Recife e Região Metropolitana." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark">JS</span><span class="brand-copy"><strong>João Silva Imóveis</strong><small>CRECI 00000-F</small></span></a><a class="btn btn-outline" href="index.html">← Voltar ao portal</a></div></header>
+  <main>
+    <section class="container page-hero"><span class="eyebrow">Para proprietários</span><h1>Conte sobre o imóvel que você quer vender ou alugar.</h1><p>As informações abaixo chegam organizadas antes da conversa. Isso ajuda a entender o imóvel, a região e o objetivo do proprietário desde o primeiro contato.</p></section>
+    <section class="container form-shell">
+      <aside class="form-aside">
+        <span class="eyebrow">Como funciona</span><h2>Uma captação melhor começa com contexto.</h2><p>O formulário separa o lead do proprietário dos contatos de compradores e cria uma entrada própria no painel do corretor.</p>
+        <div class="step-list"><div><strong>1. Você envia os dados</strong><span>Tipo, finalidade, bairro, área e valor pretendido.</span></div><div><strong>2. O corretor analisa</strong><span>As informações já chegam estruturadas no painel.</span></div><div><strong>3. O atendimento continua</strong><span>A conversa segue pelo canal informado pelo proprietário.</span></div></div>
+      </aside>
+      <form class="form-card" id="owner-form">
+        <div class="form-grid">
+          <label>Seu nome<input class="form-control" id="owner-name" name="nome" required autocomplete="name"></label>
+          <label>WhatsApp<input class="form-control" id="owner-phone" name="telefone" required inputmode="tel" placeholder="(81) 99999-9999"></label>
+          <label>Finalidade<select class="form-control" id="owner-purpose" required><option value="">Selecione</option><option>Venda</option><option>Aluguel</option></select></label>
+          <label>Tipo de imóvel<select class="form-control" id="owner-type" required><option value="">Selecione</option><option>Apartamento</option><option>Casa</option><option>Flat</option><option>Sala comercial</option><option>Terreno</option><option>Outro</option></select></label>
+          <label>Bairro<input class="form-control" id="owner-neighborhood" required></label>
+          <label>Área aproximada (m²)<input class="form-control" id="owner-area" type="number" min="1" required></label>
+          <label>Valor pretendido<input class="form-control" id="owner-value" type="number" min="0" step="100" placeholder="Ex.: 650000"></label>
+          <label>Quartos<input class="form-control" id="owner-bedrooms" type="number" min="0" max="20"></label>
+          <label class="wide">Observações<textarea class="form-control" id="owner-notes" placeholder="Condomínio, diferenciais, estado do imóvel ou outras informações importantes."></textarea></label>
+          <label class="wide"><span><input type="checkbox" id="owner-consent" required> Autorizo o contato sobre este imóvel e o tratamento destes dados para atendimento da solicitação.</span></label>
+          <button class="btn wide" type="submit">Enviar informações</button>
+        </div>
+        <div id="owner-success" class="success-box" hidden></div>
+      </form>
+    </section>
+  </main>
+  <footer><div class="container footer-grid"><div><strong>João Silva Imóveis</strong><p>CRECI 00000-F</p></div><div><p>Portal imobiliário · DiCampos Studio</p></div></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="data.js"></script>
+  <script src="backend.js"></script>
+  <script src="proprietario.js"></script>
+</body>
+</html>

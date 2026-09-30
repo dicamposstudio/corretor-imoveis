@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imóvel | João Silva Imóveis</title>
+  <meta name="description" content="Detalhes do imóvel, fotos, características e contato direto com o corretor." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark">JS</span><span class="brand-copy"><strong>João Silva Imóveis</strong><small>CRECI 00000-F</small></span></a>
+      <a class="btn btn-outline" href="index.html#imoveis">← Voltar ao catálogo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="container page-hero" id="detail-heading"></section>
+    <section class="container detail-layout">
+      <div>
+        <div class="gallery" id="detail-gallery"></div>
+        <article class="detail-main" id="detail-main"></article>
+      </div>
+      <aside class="detail-sidebar" id="detail-sidebar"></aside>
+    </section>
+    <section class="container related-section">
+      <span class="eyebrow">Continue explorando</span>
+      <h2>Imóveis semelhantes</h2>
+      <div class="cards" id="related-grid"></div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-grid"><div><strong>João Silva Imóveis</strong><p>CRECI 00000-F</p></div><div><p>Recife e Região Metropolitana</p></div></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="data.js"></script>
+  <script src="backend.js"></script>
+  <script src="imovel.js"></script>
+</body>
+</html>
