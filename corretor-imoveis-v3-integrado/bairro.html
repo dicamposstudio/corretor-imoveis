@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imóveis por bairro | João Silva Imóveis</title>
+  <meta name="description" content="Veja imóveis disponíveis por bairro em Recife." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark">JS</span><span class="brand-copy"><strong>João Silva Imóveis</strong><small>CRECI 00000-F</small></span></a><a class="btn btn-outline" href="index.html#bairros">← Todos os bairros</a></div></header>
+  <main>
+    <section class="container neighborhood-hero" id="bairro-heading"></section>
+    <section class="container section" style="padding-top:20px"><div class="cards" id="bairro-grid"></div><div id="bairro-empty" class="empty-state" hidden><strong>Ainda não há imóveis públicos neste bairro.</strong><p>Posso buscar opções diretamente para você.</p><a class="btn" href="https://wa.me/5581999999999" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a></div></section>
+  </main>
+  <footer><div class="container footer-grid"><div><strong>João Silva Imóveis</strong><p>CRECI 00000-F</p></div><div><p>Recife e Região Metropolitana</p></div></div></footer>
+  <script src="data.js"></script><script src="bairro.js"></script>
+</body>
+</html>

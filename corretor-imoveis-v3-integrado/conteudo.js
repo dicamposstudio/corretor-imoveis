@@ -1,0 +1,40 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const { getProperties, cardTemplate, track } = window.DiCampos;
+  const slug = new URLSearchParams(location.search).get('artigo') || 'boa-viagem';
+  const articles = {
+    'boa-viagem': {
+      category:'Guia de bairro', title:'Vale a pena morar em Boa Viagem?',
+      intro:'Boa Viagem combina praia, comércio, serviços e grande variedade de apartamentos. A decisão, porém, depende do trecho do bairro e da rotina de quem vai morar.',
+      body:[
+        ['O que observar','Distância da praia, acesso às avenidas principais, ruído, posição do edifício, idade do condomínio e estrutura de lazer mudam bastante de uma quadra para outra.'],
+        ['Para quem o bairro costuma funcionar bem','Quem valoriza serviços próximos, mobilidade para a Zona Sul e variedade de imóveis encontra muitas alternativas. Compare custos de condomínio e vagas com o uso real que você fará da estrutura.'],
+        ['Como pesquisar melhor','Defina faixa de preço, número de quartos e uma área de busca mais específica. Depois compare imóveis semelhantes pelo custo total, e não apenas pelo preço anunciado.']
+      ], bairros:['Boa Viagem']
+    },
+    'financiamento': {
+      category:'Financiamento', title:'Como se preparar para financiar um imóvel',
+      intro:'Antes de escolher o imóvel, organize sua capacidade de entrada, documentação e margem mensal. Isso reduz surpresas quando chegar a hora da análise de crédito.',
+      body:[
+        ['Comece pela entrada','Separe o valor disponível para entrada sem comprometer sua reserva de emergência e considere custos de documentação e mudança.'],
+        ['Organize documentos','Comprovantes de renda, documentos pessoais e informações financeiras atualizadas tornam a análise mais objetiva. Cada instituição pode solicitar itens adicionais.'],
+        ['Compare cenários','Não avalie apenas a primeira parcela. Observe prazo, sistema de amortização, seguros e custo total do financiamento antes de decidir.']
+      ], bairros:[]
+    },
+    'investimento': {
+      category:'Investimento', title:'O que observar antes de comprar para alugar',
+      intro:'Um imóvel para renda precisa ser analisado como ativo: demanda local, liquidez, custo de manutenção e perfil do locatário importam tanto quanto o acabamento.',
+      body:[
+        ['Demanda real da região','Proximidade de universidades, polos empresariais, hospitais, praia ou transporte pode influenciar o perfil e a constância da procura.'],
+        ['Custo de carregamento','Condomínio, IPTU, manutenção e períodos sem locação precisam entrar na conta. Um aluguel nominal maior nem sempre significa melhor retorno.'],
+        ['Liquidez futura','Considere também a facilidade de revenda. Tipologia, metragem, vagas, posição e estado do prédio influenciam a quantidade de potenciais compradores.']
+      ], bairros:[]
+    }
+  };
+  const a = articles[slug] || articles['boa-viagem'];
+  document.title = `${a.title} | João Silva Imóveis`;
+  const shell = document.getElementById('article-shell');
+  shell.innerHTML = `<span class="eyebrow">${a.category}</span><h1>${a.title}</h1><p>${a.intro}</p><div class="article-body">${a.body.map(([h,p]) => `<section class="detail-section"><h2>${h}</h2><p class="detail-description">${p}</p></section>`).join('')}<div class="success-box"><strong>Conteúdo demonstrativo.</strong><p>Na versão comercial, os artigos podem ser administrados pelo corretor ou pela DiCampos Studio e conectados às páginas de bairros e imóveis.</p></div></div>`;
+  const props = getProperties().filter(p => !['Vendido','Alugado'].includes(p.status) && (!a.bairros.length || a.bairros.includes(p.bairro))).slice(0,3);
+  document.getElementById('article-properties').innerHTML = props.map(p => cardTemplate(p, true)).join('');
+  track('content_view', { slug });
+});

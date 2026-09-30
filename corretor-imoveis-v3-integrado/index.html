@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>João Silva | Corretor de Imóveis em Recife</title>
+  <meta name="description" content="Encontre imóveis para comprar ou alugar em Recife e Região Metropolitana com catálogo organizado, filtros e atendimento direto pelo WhatsApp." />
+  <meta property="og:title" content="João Silva | Corretor de Imóveis em Recife" />
+  <meta property="og:description" content="Imóveis selecionados para comprar ou alugar em Recife e Região Metropolitana." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#153f2a" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="João Silva Imóveis - início">
+        <span class="brand-mark">JS</span>
+        <span class="brand-copy"><strong>João Silva Imóveis</strong><small>CRECI 00000-F</small></span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav id="main-nav" aria-label="Navegação principal">
+        <a href="#imoveis">Imóveis</a>
+        <a href="#bairros">Bairros</a>
+        <a href="#conteudo">Conteúdo</a>
+        <a href="proprietario.html">Anuncie seu imóvel</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-outline desktop-only" href="painel.html">Área do corretor</a>
+        <a class="btn track-whatsapp" href="https://wa.me/5581999999999" target="_blank" rel="noopener noreferrer" data-origem="header" data-acao="whatsapp">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Imóveis em Recife e RMR</span>
+          <h1>Seu próximo imóvel começa por uma busca mais simples.</h1>
+          <p>Compare oportunidades, filtre por bairro e perfil e fale comigo já informando qual imóvel despertou seu interesse.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#imoveis">Encontrar imóveis</a>
+            <a class="btn btn-light" href="proprietario.html">Quero anunciar meu imóvel</a>
+          </div>
+          <div class="trust-row" aria-label="Indicadores de confiança">
+            <div><strong>+80</strong><span>imóveis na carteira</span></div>
+            <div><strong>Recife + RMR</strong><span>atendimento regional</span></div>
+            <div><strong>Direto</strong><span>com o corretor</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=84" alt="Apartamento moderno disponível em Recife" width="1200" height="850" fetchpriority="high" />
+          <div class="floating-property">
+            <div><span class="status-dot"></span> Em destaque</div>
+            <strong>Apartamento em Boa Viagem</strong>
+            <span>3 quartos · 92 m² · R$ 750 mil</span>
+            <a href="imovel.html?id=JS-381">Ver detalhes →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container search-panel" id="imoveis">
+      <div class="search-heading">
+        <div>
+          <span class="eyebrow">Catálogo inteligente</span>
+          <h2>Encontre imóveis disponíveis</h2>
+        </div>
+        <span id="result-count" class="result-count">Carregando imóveis...</span>
+      </div>
+      <form class="filters" id="property-filters">
+        <label><span>Finalidade</span><select id="filter-finalidade"><option value="">Comprar ou alugar</option><option>Venda</option><option>Aluguel</option></select></label>
+        <label><span>Bairro</span><select id="filter-bairro"><option value="">Todos os bairros</option></select></label>
+        <label><span>Tipo</span><select id="filter-tipo"><option value="">Todos os tipos</option></select></label>
+        <label><span>Quartos</span><select id="filter-quartos"><option value="">Qualquer</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></label>
+        <label><span>Valor máximo</span><select id="filter-valor"><option value="">Sem limite</option><option value="300000">R$ 300 mil</option><option value="600000">R$ 600 mil</option><option value="800000">R$ 800 mil</option><option value="1500000">R$ 1,5 mi</option></select></label>
+        <button class="btn" type="submit">Filtrar</button>
+        <button class="text-button" type="button" id="clear-filters">Limpar filtros</button>
+      </form>
+      <div id="property-grid" class="cards property-grid" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <strong>Nenhum imóvel encontrado com esses filtros.</strong>
+        <p>Limpe alguns critérios ou fale comigo para buscar opções fora do catálogo público.</p>
+        <a class="btn track-whatsapp" href="https://wa.me/5581999999999?text=Nao%20encontrei%20o%20imovel%20que%20procuro%20no%20catalogo" target="_blank" rel="noopener noreferrer" data-origem="busca-sem-resultado" data-acao="whatsapp">Pedir uma busca personalizada</a>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="bairros">
+      <div class="container">
+        <div class="section-head split-head">
+          <div><span class="eyebrow">Explore por região</span><h2>Encontre seu bairro</h2></div>
+          <p>Páginas organizadas por região ajudam o cliente a navegar e criam uma base melhor para campanhas e descoberta orgânica.</p>
+        </div>
+        <div class="bairro-grid">
+          <a href="bairro.html?bairro=Boa%20Viagem"><strong>Boa Viagem</strong><span>Zona Sul · apartamentos e flats</span></a>
+          <a href="bairro.html?bairro=Casa%20Forte"><strong>Casa Forte</strong><span>Zona Norte · casas e apartamentos</span></a>
+          <a href="bairro.html?bairro=Graças"><strong>Graças</strong><span>Mobilidade e tradição</span></a>
+          <a href="bairro.html?bairro=Boa%20Vista"><strong>Boa Vista</strong><span>Centro e conveniência</span></a>
+          <a href="bairro.html?bairro=Ilha%20do%20Leite"><strong>Ilha do Leite</strong><span>Comercial e polo médico</span></a>
+          <a href="proprietario.html"><strong>Outro bairro?</strong><span>Conte onde está seu imóvel</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="conteudo">
+      <div class="section-head split-head">
+        <div><span class="eyebrow">Conteúdo útil</span><h2>Decida com mais informação</h2></div>
+        <p>Conteúdo pensado para responder dúvidas reais de compradores, locatários e investidores.</p>
+      </div>
+      <div class="blog-grid">
+        <article><span>Guia de bairro</span><h3>Vale a pena morar em Boa Viagem?</h3><p>Praia, mobilidade, comércio, lazer e pontos importantes para comparar antes de escolher.</p><a href="conteudo.html?artigo=boa-viagem">Ler guia →</a></article>
+        <article><span>Financiamento</span><h3>Como se preparar para financiar um imóvel</h3><p>Um passo a passo simples para organizar documentação, entrada e análise de crédito.</p><a href="conteudo.html?artigo=financiamento">Ler artigo →</a></article>
+        <article><span>Investimento</span><h3>O que observar antes de comprar para alugar</h3><p>Localização, liquidez, condomínio e perfil de demanda entram na conta.</p><a href="conteudo.html?artigo=investimento">Ler artigo →</a></article>
+      </div>
+    </section>
+
+    <section class="container owner-cta">
+      <div>
+        <span class="eyebrow light-eyebrow">Para proprietários</span>
+        <h2>Seu imóvel também pode entrar neste catálogo.</h2>
+        <p>Envie as principais informações para eu entender o perfil do imóvel antes do primeiro contato e tornar a conversa mais objetiva.</p>
+      </div>
+      <div class="owner-card">
+        <span class="micro-label">Captação organizada</span>
+        <h3>Quero vender ou alugar</h3>
+        <p>Informe tipo, bairro, área, valor e contato. O cadastro leva poucos minutos.</p>
+        <a class="btn full" href="proprietario.html">Cadastrar meu imóvel</a>
+      </div>
+    </section>
+
+    <section class="container demo-strip">
+      <div><span class="eyebrow">Demonstração DiCampos</span><h2>Este portal também mede o que gera interesse.</h2><p>Visualizações, cliques no WhatsApp, imóveis mais procurados e captação de proprietários aparecem no painel demonstrativo.</p></div>
+      <a class="btn btn-dark" href="painel.html">Abrir painel do corretor</a>
+    </section>
+  </main>
+
+  <a class="mobile-whatsapp track-whatsapp" href="https://wa.me/5581999999999" target="_blank" rel="noopener noreferrer" data-origem="whatsapp-flutuante" data-acao="whatsapp">WhatsApp</a>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>João Silva Imóveis</strong><p>CRECI 00000-F · Recife e Região Metropolitana</p></div>
+      <div><p>Compra · Aluguel · Avaliação · Investimento</p><p>Protótipo V3 criado pela DiCampos Studio.</p></div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

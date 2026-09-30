@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel do corretor | João Silva Imóveis</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-shell">
+  <header class="dashboard-top">
+    <div class="container dashboard-nav">
+      <a class="brand" href="index.html"><span class="brand-mark">JS</span><span class="brand-copy"><strong>João Silva Imóveis</strong><small style="color:rgba(255,255,255,.65)">Painel demonstrativo</small></span></a>
+      <div class="dashboard-actions"><a class="btn btn-light" href="novo-imovel.html">+ Novo imóvel</a><a class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.35)" href="index.html">Ver portal</a></div>
+    </div>
+  </header>
+
+  <main class="container dashboard-main">
+    <div class="dashboard-head"><div><span class="eyebrow">Visão geral</span><h1>Bom dia, João.</h1><p>Veja o que está gerando interesse no seu portal.</p></div><div><button class="text-button" id="seed-demo">Gerar atividade de demonstração</button><button class="text-button" id="reset-demo">Limpar dados locais</button></div></div>
+
+    <section class="metric-grid" id="metrics"></section>
+
+    <div class="dashboard-grid">
+      <div>
+        <section class="panel">
+          <div class="panel-head"><h2>Imóveis e desempenho</h2><a class="card-link" href="novo-imovel.html">Cadastrar imóvel →</a></div>
+          <div class="table-wrap"><table class="data-table"><thead><tr><th>Imóvel</th><th>Status</th><th>Valor</th><th>Visualizações</th><th>WhatsApp</th></tr></thead><tbody id="property-table"></tbody></table></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Leads de proprietários</h2><span class="result-count" id="owner-lead-count"></span></div>
+          <div id="owner-leads" class="lead-list"></div>
+        </section>
+      </div>
+      <aside>
+        <section class="panel"><div class="panel-head"><h2>Bairros mais vistos</h2></div><div class="bar-list" id="neighborhood-bars"></div></section>
+        <section class="panel"><div class="panel-head"><h2>Origem dos contatos</h2></div><div class="bar-list" id="source-bars"></div></section>
+        <section class="panel"><div class="panel-head"><h2>Seleção para cliente</h2></div><p style="color:var(--muted);margin-top:0">Escolha imóveis e gere uma página compartilhável com uma curadoria personalizada.</p><div id="selection-options" class="lead-list"></div><button id="generate-selection" class="btn full" type="button">Gerar seleção personalizada</button><div id="selection-result" class="success-box" hidden></div></section>
+        <section class="panel"><div class="panel-head"><h2>O que este painel demonstra</h2></div><p style="color:var(--muted);margin:0">A versão comercial pode receber dados de GA4, GTM, campanhas e CRM. Neste protótipo, visualizações, cliques e cadastros são armazenados apenas no navegador para demonstrar a experiência.</p></section>
+      </aside>
+    </div>
+  </main>
+  <script src="data.js"></script><script src="painel.js"></script>
+</body>
+</html>
